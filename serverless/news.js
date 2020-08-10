@@ -21,7 +21,10 @@ exports.handler = function (event, context, callback) {
 
       //the whole response has been received, so we just print it out here
       response.on("end", function () {
-        callback(null, str);
+        callback(null, {
+          statusCode: 200,
+          body: str,
+        });
       });
     })
     .end();
