@@ -13,10 +13,10 @@ export class GetnewsService {
 
 
   private apiKey = "d007ed4ee98c49deb09488f346cace84"
-
+    private url = '/.netlify/functions'
 
   getNews(topic: string) {
-    let url = `https://newsapi.org/v2/top-headlines?country=pt&category=${topic}&apiKey=${this.apiKey}`
+    let url = `${this.url}/news?country=pt&category=${topic}`
     return this.http.get<any>(url);
   }
 
