@@ -1,0 +1,19 @@
+<div class="container" *ngIf="news$ as news">
+    <div class="card-container">
+        <div class="card" *ngFor="let article of news">
+            <a [href]="article.url">
+                <img [src]="article.urlToImage" onerror="this.src='../../../assets/images/defaultImage.jpg';"
+                    class="card-img-top" alt="...">
+            </a>
+            <div class="card-body">
+                <p class="card-text">{{ article.title }}</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Atualizado ás {{article.publishedAt | date: "HH:mm" }}</small>
+            </div>
+        </div>
+    </div>
+</div>
+<button (click)="goTop()" [style.display]="scrolled ? 'block' : 'none'" class="go-top">
+    <fa-icon class="arrowUp" [icon]="faArrowUp"></fa-icon>
+</button>

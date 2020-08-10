@@ -1,0 +1,34 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+        <img src="../../../assets/images/newspaper.png" width="30px" height="30px">
+    </a>
+
+    <button class="navbar-toggler" type="button" (click)="toggleNavbar()" appDropdown>
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }" >
+        <ul class="nav navbar-nav">
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="general" (click)="navbarOpen = !navbarOpen">Home</a>
+            </li>
+            <li class="nav-item"  routerLinkActive="active">
+                <a class="nav-link" routerLink="sports" (click)="navbarOpen = !navbarOpen">Desporto</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="entertainment" (click)="navbarOpen = !navbarOpen">Entretenimento</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="technology" (click)="navbarOpen = !navbarOpen">Tecnologia</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="health" (click)="navbarOpen = !navbarOpen">Saúde</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="business" (click)="navbarOpen = !navbarOpen">Negócios</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="science" (click)="navbarOpen = !navbarOpen">Ciência</a>
+            </li>
+        </ul>
+    </div>
+</nav>
